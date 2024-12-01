@@ -20,7 +20,8 @@ app.use(express.static(path.join(__dirname, "..", "..", "client/dist"))); // Ser
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://code-collab-2-0.vercel.app/",
+    methods: ["GET", "POST"],
   },
   maxHttpBufferSize: 1e8,
   pingTimeout: 60000,
