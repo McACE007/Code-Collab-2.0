@@ -6,8 +6,10 @@
 	"scripts": {
 		"dev": "nodemon --exec ts-node server/src/server.ts",
 		"start": "node server/dist/server.js",
+		"build-client": "cd client && npm run build",
+		"start-client": "cd client && npm run start",
 		"build": "tsc"
-		
+
 	},
 	"keywords": [],
 	"author": "",
