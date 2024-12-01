@@ -1,4 +1,12 @@
 {
+"headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Accept", "value": "text/html" }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
