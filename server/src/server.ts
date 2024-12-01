@@ -16,12 +16,11 @@ app.use(express.json());
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "..", "..", "client/dist"))); // Serve static files
+app.use(express.static(path.join(__dirname, "public"))); // Serve static files
 
 const io = new Server(server, {
   cors: {
-    origin: "https://code-collab-2-0.vercel.app/",
-    methods: ["GET", "POST"],
+    origin: "*",
   },
   maxHttpBufferSize: 1e8,
   pingTimeout: 60000,
@@ -271,7 +270,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/", (req: Request, res: Response) => {
   // Send the index.html file
-  res.sendFile(path.join(__dirname, "..", "..", "/client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 server.listen(PORT, () => {
